@@ -5,6 +5,7 @@ import ResultSection from '../ResultSection'
 
 const MainSection = () => {
   const [url, setUrl] = useState('')
+  const [submittedImage, setSubmittedImage] = useState('')
   const [submitting, setSubmitting] = useState(false)
   const [errorMessage, setErrorMessage] = useState('')
   const [response, setResponse] = useState({})
@@ -18,6 +19,8 @@ const MainSection = () => {
       try {
         const { data } = await uploadImage({ image: url })
         // Setting response data to pass in Details Section
+
+        setSubmittedImage(url)
         return setResponse(data)
       } catch (error) {
         setErrorMessage(error?.response?.data?.detail || 'Unknown error.')
@@ -80,7 +83,7 @@ const MainSection = () => {
       </main>
       {Object.keys(response).length !== 0 && (
         <ResultSection
-          url={url}
+          url={submittedImage}
           response={response}
         />
       )}
