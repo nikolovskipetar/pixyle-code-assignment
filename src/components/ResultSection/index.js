@@ -7,7 +7,11 @@ const ResultSection = ({ response, url }) => {
         <h3>No Attirbutes Found.</h3>
       ) : (
         <div className={styles['result__container']}>
-          <img src={url} className={styles['result__image']}/>
+          <img
+            src={url}
+            className={styles['result__image']}
+            alt="result-image"
+          />
           <div className={styles['result__details']}>
             <h3>category: <span>{response.result[0].category}</span></h3>
             {response.result[0].detected_attributes_types.map((attr, idx) => (

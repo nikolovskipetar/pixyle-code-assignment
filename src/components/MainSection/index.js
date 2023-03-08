@@ -48,6 +48,7 @@ const MainSection = () => {
       <main className={styles['main']}>
         <div className={styles['main__container']}>
           <img
+            alt="main-image"
             className={styles['main__image']}
             src="https://demo.pixyle.ai/static/media/homeImg.013e9b7e49aea75a88c4.png"
           />
