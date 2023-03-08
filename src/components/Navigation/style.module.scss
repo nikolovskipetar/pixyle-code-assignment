@@ -1,0 +1,40 @@
+.navigation {
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  padding: 20px;
+
+  &__container {
+    max-width: 1200px;
+    margin: auto;
+  }
+
+  &__items {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &--logo {
+      @media(max-width: 991px) {
+        width: 130px;
+      }
+    }
+
+    &--button {
+      border-radius: 30px;
+      box-shadow: 1px 1px 12px -6px #424b54;
+      border: 2px solid #372c8a;
+      background-color: white;
+      padding: 10px 20px;
+      font-weight: 900;
+      transition: transform ease 300ms;
+      cursor: pointer;
+
+      &:hover {
+        transform: translate(0, -6px);
+      }
+    }
+  }
+
+  @media(max-width: 991px) {
+    padding: 15px 1rem;
+  }
+}
